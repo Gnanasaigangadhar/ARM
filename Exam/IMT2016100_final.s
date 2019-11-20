@@ -1,17 +1,17 @@
-	PRESERVE8 
+    PRESERVE8 
     THUMB 
     AREA    |.text|,CODE,READONLY 
-	IMPORT printMsg
+    IMPORT printMsg
     EXPORT __main 
     ENTRY 
 	
-	EXPORT __sine	 
+    EXPORT __sine	 
 __sine function	
 	
 		VLDR.F32 S13,=3.14592 ; Pi value
 		VLDR.F32 S14,=180 ;  180 degress
 		VMOV.F32 S0,R4; 
-        VCVT.F32.U32 S0, S0;
+                VCVT.F32.U32 S0, S0;
 		VMUL.F32 S0,S0, S13
 		VDIV.F32 S0,S0, S14 ;angle into radians
 		MOV R1,#10;
