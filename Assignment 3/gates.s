@@ -145,7 +145,7 @@ __logic_nand  function
 	 VMOV.F32 s2,s8;  sum goes as x in sigmoid function 
 	 
 	 BL  __sigmoid 
-	 VCVTR.S32.F32 s25,s7 
+	 VCVTR.S32.F32 s25,s7 ;storing final output value in s25 and i am doing it for every gate  
 	 VMOV.F32 r0,s15
 	 BL printMsg
 	 VMOV.F32 r0,s16
@@ -191,7 +191,7 @@ __logic_nor function
 	 VMOV.F32 s2,s8;  sum goes as x in sigmoid function 
 	 
 	 BL  __sigmoid 
-	 VCVTR.S32.F32 s26,s7 
+	 VCVTR.S32.F32 s26,s7 ;storing final output value in s26 and i am doing it for every gate  
 	 VMOV.F32 r0,s15
 	 BL printMsg
 	 VMOV.F32 r0,s16
@@ -231,7 +231,7 @@ __logic_not function
 	 VMOV.F32 s2,s8;  sum goes as x in sigmoid function 
 	 
 	 BL  __sigmoid 
-	 VCVTR.S32.F32 s26,s7 
+	 VCVTR.S32.F32 s26,s7 storing final output value in s26 and i am doing it for every gate  
 	 VMOV.F32 r0,s15
 	 BL printMsg
 	 ;VMOV.F32 r0,s16
@@ -390,7 +390,7 @@ __logic_xor function
 	   
 	   
        BL __sigmoid ; output
-	   VCVTR.S32.F32 s26,s7
+	   VCVTR.S32.F32 s26,s7;storing final output value in s26 and i am doing it for every gate  
 	   VMOV.F32 r0,s15
 	   BL printMsg
 	   VMOV.F32 r0,s16
@@ -549,7 +549,7 @@ __logic_xnor function
 	   
 	   
        BL __sigmoid ;output
-	   VCVTR.S32.F32 s31,s7
+	   VCVTR.S32.F32 s31,s7 ;storing final output value in s31 and i am doing it for every gate  
 	   VMOV.F32 r0,s15
 	   BL printMsg
 	   VMOV.F32 r0,s16
@@ -575,7 +575,7 @@ __main  function
 	  
 	   MOV r0,#0
 	   BL printGate
-	   VLDR.F32 s28, =1.0 ; x1
+	   VLDR.F32 s28, =1.0 ; x1(input)
 	   VLDR.F32 s29, =1.0 ; x2
 	   VLDR.F32 s30, =1.0 ; x3
 	  
